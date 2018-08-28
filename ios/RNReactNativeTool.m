@@ -1,10 +1,8 @@
 
 
-#if __has_include(<React/RCTConvert.h>)
-#import <React/RCTConvert.h>
-#elif __has_include("RCTConvert.h")
-#import "RCTConvert.h"
-#endif
+#import "RNBridgeModule.h"
+#import <React/RCTBridge.h>
+#import <React/RCTEventDispatcher.h>
 
 #import "RNReactNativeTool.h"
 
@@ -15,7 +13,7 @@
     return dispatch_get_main_queue();
 }
 
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE(RNReactNativeTool);
 
 RCT_EXPORT_METHOD(measure:(NSDictionary *)options
                   resolver:(RCTPromiseResolveBlock)resolve
